@@ -1,0 +1,30 @@
+{% extends 'base_landing.html' %}
+{% block title %}QUERY : LogIn{% endblock title %}
+{% load staticfiles %}
+{% block content %}
+
+  <div class="loginmodal-container" id="asd">
+    <h1>Login to your Account</h1><br>
+    <form class="form" action="." method="post">
+      {% csrf_token %}
+      <input type="text" name="username" value="" placeholder="Username" required autocomplete="off" class="integer" id="integer">
+      <input type="password" name="password" value="" placeholder="Type your password" required autocomplete="off">
+      <button type="submit" class="login loginmodal-submit" name=""  value="Login" id="login-button">Login</button>
+      <!--<button type="button" name=""  onclick="window.location.href='/accounts/register/'">Register</button>-->
+      <input type="hidden" name="next" value="/user/dashboard">
+    </form>
+      <div class="login-help">
+  			<a href="/accounts/register">Register</a> - <a href="#">Forgot Password</a>
+  		</div>
+  </div>
+  <style media="screen">
+  body {
+      font-family: 'Raleway', sans-serif;
+      background: url(http://res.cloudinary.com/migantoju/image/upload/v1472919754/O6LGQYEPFT_wi9hs8.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+  }
+  </style>
+  {% endblock content %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}{{user.email}}{% endblock %}
+{% block head %}
+
+{% endblock head %}
+{% block content %}
+    <h1> Welcome {{ user.username }} !!! </h1>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base_landing.html' %}
+{% block title %}Register : Queryy{% endblock title %}
+{% block header %}
+  <!--<h1>LogIn</h1 class="center">-->
+{% endblock header %}
+{% block content %}
+  {% if form.errors %}
+    <div class="alert alert-danger">
+      <strong>Error!</strong>Your username and password didn't match. Please try again
+    </div>
+  {% endif %}
+  <form method="post" action=".">{% csrf_token %}
+          <table border="0">
+            <!--<tr><th><label for="id_username">Username:</label></th><td>{{form.username}}</td></tr>
+            <tr><th><label for="id_password">Email:</label></th><td>{{ form.email }}</td></tr>
+            <tr><th><label for="id_username">Type your password:</label></th><td>{{ form.password1 }}</td></tr>
+            <tr><th><label for="id_password">Retype your password:</label></th><td>{{ form.password2 }}</td></tr>-->
+            {{form.as_p}}
+          </table>
+          <input class="btn btn-success" type="submit" value="Register" id="Register"/>
+                  <h4>You Have An Account? <a href="/accounts/login/">Login</a> Here!</h4>
+      </form>
+
+
+      <style media="screen">
+        form{
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 150px;
+          padding: 30px;
+          max-width: 350px;
+          width: 100% !important;
+          background-color: #F7F7F7;
+          border-radius: 2px;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+          overflow: hidden;
+          font-family: roboto;
+        }
+        #Register{
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+        }
+        h4{
+          text-align: center;
+        }
+        #Register{
+          width: 150px;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: url(http://res.cloudinary.com/migantoju/image/upload/v1472920913/login_background_hpw699.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+      </style>
+{% endblock content %}
